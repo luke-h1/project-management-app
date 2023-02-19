@@ -9,7 +9,7 @@ export const hashPassword = async (password: string): Promise<string> => {
   return bcrypt.hash(password, 10);
 };
 
-export const comparePasword = async (
+export const comparePassword = async (
   password: string,
   hashedPassword: string,
 ): Promise<boolean> => {
