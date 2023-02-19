@@ -46,7 +46,7 @@ export type RegisterRequest = {
   lastName: string;
 };
 
-export type SignInRequest = Omit<RegisterRequest, 'firstName' | 'lastName'>;
+export type LoginRequest = Omit<RegisterRequest, 'firstName' | 'lastName'>;
 
 export const register = (user: RegisterRequest): Promise<User | undefined> => {
   return fetcher({
@@ -56,9 +56,9 @@ export const register = (user: RegisterRequest): Promise<User | undefined> => {
   });
 };
 
-export const signin = (user: SignInRequest): Promise<User | undefined> => {
+export const login = (user: LoginRequest): Promise<User | undefined> => {
   return fetcher({
-    url: '/api/signin',
+    url: '/api/login',
     method: 'POST',
     body: user,
   });
